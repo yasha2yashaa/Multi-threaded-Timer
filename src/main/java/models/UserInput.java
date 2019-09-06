@@ -29,11 +29,15 @@ public class UserInput {
     }
 
     public String getTimerName() {
-        if (isStartRequest() || isStopRequest() || isPauseRequest()) {
+        if (isRequestTypeWithTimerName()) {
             return input.split(" ")[1];
         }
         else {
             throw new IllegalStateException("Input is not a start, stop or pause request, it doesn't contain timer name.");
         }
+    }
+
+    private boolean isRequestTypeWithTimerName() {
+        return isStartRequest() || isStopRequest() || isPauseRequest();
     }
 }
