@@ -1,6 +1,7 @@
 package helpers;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class TimersContainer {
     private HashMap<String, Timer> timers;
@@ -19,5 +20,9 @@ public class TimersContainer {
 
     public boolean exists(String name) {
         return timers.containsKey(name);
+    }
+
+    public Set<String> getTimerNames() {
+        return timers.keySet();
     }
 }
