@@ -39,14 +39,14 @@ public class ApplicationController {
     }
 
     private void show() {
-
+        applicationService.show();
     }
 
     private void start(String timerName) {
-
+        applicationService.startNewTimer(timerName);
     }
 
     private void stop(String timerName) {
-
+        applicationService.pauseTimer(timerName);
     }
 }
