@@ -8,11 +8,25 @@ public class Timer implements Runnable {
 
     @Override
     public void run() {
-//        try {
-//            thread = Thread.currentThread();
-//        } catch(InterruptedException e) {
-//            // interrupted
-//        }
+        thread = Thread.currentThread();
+        try {
+            while(!thread.isInterrupted()) {
+                if(isRunning) {
+                        Thread.sleep(1000);
+                        secondCounter++;
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int getSecondCounter() {
+        return  secondCounter;
+    }
+
+    public long getThreadId() {
+        return thread.getId();
     }
 
     public void pause() {
@@ -24,5 +38,6 @@ public class Timer implements Runnable {
     }
 
     public void interrupt() {
+        thread.interrupt();
     }
 }
