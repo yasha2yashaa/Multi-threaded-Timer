@@ -17,7 +17,7 @@ public class Timer implements Runnable {
                 }
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            // interrupted
         }
     }
 
