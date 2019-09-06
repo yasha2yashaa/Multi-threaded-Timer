@@ -24,20 +24,16 @@ public class UserInput {
         return input.toLowerCase().startsWith("stop");
     }
 
-    public boolean isPauseRequest() {
-        return input.toLowerCase().startsWith("pause");
-    }
-
     public String getTimerName() {
         if (isRequestTypeWithTimerName()) {
             return input.split(" ")[1];
         }
         else {
-            throw new IllegalStateException("Input is not a start, stop or pause request, it doesn't contain timer name.");
+            throw new IllegalStateException("Input is not a start or stop request, it doesn't contain timer name.");
         }
     }
 
     private boolean isRequestTypeWithTimerName() {
-        return isStartRequest() || isStopRequest() || isPauseRequest();
+        return isStartRequest() || isStopRequest();
     }
 }
