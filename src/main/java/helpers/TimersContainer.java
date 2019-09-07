@@ -18,6 +18,10 @@ public class TimersContainer {
         return timers.get(name);
     }
 
+    public void remove(String name) {
+        timers.remove(name);
+    }
+
     public boolean exists(String name) {
         return timers.containsKey(name);
     }
