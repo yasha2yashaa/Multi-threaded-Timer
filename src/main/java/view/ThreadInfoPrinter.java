@@ -17,7 +17,6 @@ public class ThreadInfoPrinter {
             print(timer.getThreadId());
             print(", Seconds: ");
             print(timer.getSecondCounter());
-            print("\n");
         }
     }
 
