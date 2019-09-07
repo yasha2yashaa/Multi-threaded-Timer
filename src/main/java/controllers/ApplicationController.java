@@ -34,6 +34,9 @@ public class ApplicationController {
             else if (input.isRemoveRequest()) {
                 remove(input.getTimerName());
             }
+            else {
+                System.out.println("Invalid keyword");
+            }
         }
     }
 
