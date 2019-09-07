@@ -36,6 +36,8 @@ public class ApplicationController {
 
     private void exit() {
         run = false;
+        show();
+        applicationService.interruptAllTimerThreads();
     }
 
     private void show() {
