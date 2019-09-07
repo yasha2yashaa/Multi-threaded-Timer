@@ -24,6 +24,10 @@ public class UserInput {
         return input.toLowerCase().startsWith("stop");
     }
 
+    public boolean isRemoveRequest() {
+        return input.toLowerCase().startsWith("remove");
+    }
+
     public String getTimerName() {
         if (isRequestTypeWithTimerName()) {
             return input.split(" ")[1];
@@ -34,6 +38,6 @@ public class UserInput {
     }
 
     private boolean isRequestTypeWithTimerName() {
-        return isStartRequest() || isStopRequest();
+        return isStartRequest() || isStopRequest() || isRemoveRequest();
     }
 }
