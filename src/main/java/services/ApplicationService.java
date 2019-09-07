@@ -4,6 +4,8 @@ import helpers.Timer;
 import helpers.TimersContainer;
 import view.ThreadInfoPrinter;
 
+import java.util.Set;
+
 public class ApplicationService {
     private ThreadInfoPrinter threadInfoPrinter;
     private TimersContainer timersContainer;
@@ -36,5 +38,10 @@ public class ApplicationService {
             Timer timer = timersContainer.get(timerName);
             timer.pause();
         }
+    }
+
+    public void interruptAllTimerThreads() {
+        Set<String> timerNames = timersContainer.getTimerNames();
+        timerNames.forEach(string -> timersContainer.get(string).interrupt());
     }
 }
