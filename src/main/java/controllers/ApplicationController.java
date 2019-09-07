@@ -31,6 +31,9 @@ public class ApplicationController {
             else if (input.isStopRequest()) {
                 stop(input.getTimerName());
             }
+            else if (input.isRemoveRequest()) {
+                remove(input.getTimerName());
+            }
         }
     }
 
@@ -50,5 +53,9 @@ public class ApplicationController {
 
     private void stop(String timerName) {
         applicationService.pauseTimer(timerName);
+    }
+
+    private void remove(String timerName) {
+        applicationService.remove(timerName);
     }
 }
