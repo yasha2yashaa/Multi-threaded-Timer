@@ -12,6 +12,7 @@ public class InputTaker {
     }
 
     public UserInput getUserInput() {
+        System.out.print("> ");
         return new UserInput(scanner.nextLine());
     }
 }
