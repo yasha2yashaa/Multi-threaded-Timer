@@ -1,1 +1,1 @@
-# Multi-threaded-Timer
+# Multi-threaded-Timer console app written in java
