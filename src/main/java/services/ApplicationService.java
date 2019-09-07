@@ -40,6 +40,14 @@ public class ApplicationService {
         }
     }
 
+    public void remove(String timerName) {
+        if (timersContainer.exists(timerName)) {
+            Timer timer = timersContainer.get(timerName);
+            timer.interrupt();
+            timersContainer.remove(timerName);
+        }
+    }
+
     public void interruptAllTimerThreads() {
         Set<String> timerNames = timersContainer.getTimerNames();
         timerNames.forEach(string -> timersContainer.get(string).interrupt());
