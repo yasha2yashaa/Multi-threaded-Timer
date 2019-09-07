@@ -21,7 +21,8 @@ public class ApplicationService {
         Timer timer;
         if (!timersContainer.exists(timerName)) {
            timer = new Timer();
-           timer.run();
+           Thread thread = new Thread(timer);
+           thread.start();
            timersContainer.add(timerName, timer);
         }
         else {
